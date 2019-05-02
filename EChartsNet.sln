@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EChartsNet", "EChartsNet\EC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EChartsNetDemo", "EChartsNetDemo\EChartsNetDemo.csproj", "{6BFBE4FA-A50B-4463-B9F1-8D1CBCA1A380}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B37DA743-EC41-4CBD-8AF1-4EDA1113003D}"
+	ProjectSection(SolutionItems) = preProject
+		20190502141413.png = 20190502141413.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
