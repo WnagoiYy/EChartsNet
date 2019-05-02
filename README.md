@@ -5,7 +5,7 @@ net framework >= 4.0
 
 echarts > 4
 
-[直接下载使用](https://pan.baidu.com/s/1v_P6A9lcju59WPXcUcRFLQ)   提*-*码: r79k  ☞ Star!!!
+[直接下载使用](https://pan.baidu.com/s/1v_P6A9lcju59WPXcUcRFLQ)   提*-*码: r79k  ☞ 欢迎 Star ! ! !
 
 # 使用
 新建控制台程序(winform和wpf均可，不过都以winform版本的webbrowser作为承载):
