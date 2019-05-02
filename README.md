@@ -8,7 +8,7 @@ echarts > 4
 # 使用
 新建控制台程序(winform和wpf均可，不过都以winform版本的webbrowser作为承载):
 1. init data: 初始化数据(DataTable映射为echarts中的dataset)，默认列名作标签轴
-```
+```C#
 DataTable dataTable = new DataTable("temp");
 dataTable.Columns.Add("产品", typeof(string));
 dataTable.Columns.Add("2015", typeof(float));
@@ -20,7 +20,7 @@ dataTable.Rows.Add("日本", 86.4, 65.2, 82.5);
 dataTable.Rows.Add("英国", 72.4, 53.9, 39.1);
 ```
 2. add browser: 增加浏览器承载 winfrom和wpf的webbrowser均可
-```
+```C#
 int row = 2, col = 3, width = 500, height = 370;
 WebBrowser browser = new WebBrowser();
 browser.Dock = DockStyle.Fill;
@@ -29,7 +29,7 @@ browser.Size = new Size(col * width, row * height);
 ```
 
 3. add layout and charts, then show :创建布局，增加图表，Show()显示
-```
+```C#
 Echarts echarts = new Echarts(browser);//新建 以browser承载
 echarts.AddTheme(Theme.roma);//增加主题
 echarts.CreateTableLayout(row, col, width, height);//创建布局
@@ -43,7 +43,7 @@ echarts[2, 3] = new BasicPie(dataTable,new CompleteOption(), 1);
 echarts.Show();//显示
 ```
 4. 关于控制台显示form和webbrowser见**EChartsNetDemo项目**
-```
+```C#
 Form form = new Form();
 form.FormClosing += delegate { browser.Dispose(); Environment.Exit(0); };
 form.Size = new Size(col * width + 45, row * height + 60);
