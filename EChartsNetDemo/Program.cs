@@ -55,7 +55,7 @@ namespace EChartsNetDemo
 
             //EchartsInitialize.SupportEchartsGL = true;
             //EchartsInitialize.SupportBootstrap = true;
-            //03.创建布局，增加图，Show()显示图
+            //03.创建布局，增加图，Show()显示图 
             Echarts echarts = new Echarts(browser);
             echarts.AddTheme(Theme.roma);
             echarts.CreateTableLayout(row, col, width, height);
