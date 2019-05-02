@@ -19,7 +19,7 @@ dataTable.Rows.Add("美国", 83.1, 73.4, 55.1);
 dataTable.Rows.Add("日本", 86.4, 65.2, 82.5);
 dataTable.Rows.Add("英国", 72.4, 53.9, 39.1);
 ```
-2. add browser: 增加浏览器承载 winfrom和wpf的webbrowser均可
+2. add browser: 增加浏览器承载 winfrom的webbrowser(wpf可嵌入winform控件)
 ```C#
 int row = 2, col = 3, width = 500, height = 370;
 WebBrowser browser = new WebBrowser();
