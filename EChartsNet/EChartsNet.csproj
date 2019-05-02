@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3F94A51-4C0A-432C-B809-F20695DDE62D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EChartsNet</RootNamespace>
+    <AssemblyName>EChartsNet</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Charts\Bar\SimpleBar.cs" />
+    <Compile Include="Charts\Bar\StackBar.cs" />
+    <Compile Include="Charts\BaseCharts.cs" />
+    <Compile Include="Charts\Line\BasicAreachart.cs" />
+    <Compile Include="Charts\Line\BasicLineChart.cs" />
+    <Compile Include="Charts\Line\SmoothedLineChart.cs" />
+    <Compile Include="Charts\Pie\BasicPie.cs" />
+    <Compile Include="Charts\Radar\BasicRadar.cs" />
+    <Compile Include="Charts\Scatter\BasicScatter.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Echarts.cs" />
+    <Compile Include="EchartsInitialize.cs" />
+    <Compile Include="HtmlNode\Node.cs" />
+    <Compile Include="JSBeautify.cs" />
+    <Compile Include="Option\BaseEOption.cs" />
+    <Compile Include="Option\BaseOption\AxisPointer.cs" />
+    <Compile Include="Option\BaseOption\FontFamily.cs" />
+    <Compile Include="Option\BaseOption\FontStyle.cs" />
+    <Compile Include="Option\BaseOption\FontWeight.cs" />
+    <Compile Include="Option\BaseOption\LegendAlign.cs" />
+    <Compile Include="Option\BaseOption\LegendType.cs" />
+    <Compile Include="Option\BaseOption\Orient.cs" />
+    <Compile Include="Option\BaseOption\Position.cs" />
+    <Compile Include="Option\BaseOption\Target.cs" />
+    <Compile Include="Option\BaseOption\TextAlign.cs" />
+    <Compile Include="Option\BaseOption\TextVerticalAlign.cs" />
+    <Compile Include="Option\BaseOption\ToolBoxBaseOption\BorderType.cs" />
+    <Compile Include="Option\BaseOption\ToolBoxBaseOption\Feature.cs" />
+    <Compile Include="Option\BaseOption\ToolBoxBaseOption\IconStyle.cs" />
+    <Compile Include="Option\BaseOption\ToolBoxBaseOption\ToolboxEmphasis.cs" />
+    <Compile Include="Option\BaseOption\ToolBoxBaseOption\ToolboxOrient.cs" />
+    <Compile Include="Option\BaseOption\TriggerOn.cs" />
+    <Compile Include="Option\BaseOption\xAxisType.cs" />
+    <Compile Include="Option\CompleteOption.cs" />
+    <Compile Include="Option\DataSetSource.cs" />
+    <Compile Include="Option\Grid.cs" />
+    <Compile Include="Option\Legend.cs" />
+    <Compile Include="Option\Polar.cs" />
+    <Compile Include="Option\Series.cs" />
+    <Compile Include="Option\SeriesType\BarBaseOption\BarData.cs" />
+    <Compile Include="Option\SeriesType\ISeries.cs" />
+    <Compile Include="Option\SeriesType\LineBaseOption\AreaStyle.cs" />
+    <Compile Include="Option\SeriesType\LineBaseOption\AreaStyleOrigin.cs" />
+    <Compile Include="Option\SeriesType\LineBaseOption\CoordinateSystem.cs" />
+    <Compile Include="Option\SeriesType\LineBaseOption\LineData.cs" />
+    <Compile Include="Option\SeriesType\LineBaseOption\LineSampling.cs" />
+    <Compile Include="Option\SeriesType\LineBaseOption\LineStyle.cs" />
+    <Compile Include="Option\SeriesType\LineBaseOption\LineStyleType.cs" />
+    <Compile Include="Option\SeriesType\LineBaseOption\MarkArea.cs" />
+    <Compile Include="Option\SeriesType\LineBaseOption\MarkAreaData.cs" />
+    <Compile Include="Option\SeriesType\LineBaseOption\MarkLine.cs" />
+    <Compile Include="Option\SeriesType\LineBaseOption\MarkLineData.cs" />
+    <Compile Include="Option\SeriesType\LineBaseOption\MarkPoint.cs" />
+    <Compile Include="Option\SeriesType\LineBaseOption\MarkPointData.cs" />
+    <Compile Include="Option\SeriesType\PieBaseOption\LabelLine.cs" />
+    <Compile Include="Option\SeriesType\PieBaseOption\PieData.cs" />
+    <Compile Include="Option\SeriesType\RadarBaseOption\RadarData.cs" />
+    <Compile Include="Option\SeriesType\ScatterBaseOption\ScatterData.cs" />
+    <Compile Include="Option\SeriesType\SeriesBar.cs" />
+    <Compile Include="Option\SeriesType\SeriesBaseOption\Emphasis.cs" />
+    <Compile Include="Option\SeriesType\SeriesBaseOption\ItemStyle.cs" />
+    <Compile Include="Option\SeriesType\SeriesBaseOption\Label.cs" />
+    <Compile Include="Option\SeriesType\SeriesBaseOption\Position.cs" />
+    <Compile Include="Option\SeriesType\SeriesLine.cs" />
+    <Compile Include="Option\SeriesType\SeriesPie.cs" />
+    <Compile Include="Option\SeriesType\SeriesRadar.cs" />
+    <Compile Include="Option\SeriesType\SeriesScatter.cs" />
+    <Compile Include="Option\SubtextStyle.cs" />
+    <Compile Include="Option\TextStyle.cs" />
+    <Compile Include="Option\Title.cs" />
+    <Compile Include="Option\ToolBox.cs" />
+    <Compile Include="Option\Tooltip.cs" />
+    <Compile Include="Option\XAxis.cs" />
+    <Compile Include="Option\YAxis.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemarkAttribute.cs" />
+    <Compile Include="TableLayout\Table.cs" />
+    <Compile Include="Theme.cs" />
+    <Compile Include="WebBrowserConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Charts\Funnel\" />
+    <Folder Include="Charts\Gauge\" />
+    <Folder Include="Option\BaseOption\AxisBaseOption\" />
+    <Folder Include="Option\BaseOption\AxisPointerBaseOption\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Echarts\bootstrap\css\bootstrap-grid.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\bootstrap\css\bootstrap-grid.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\bootstrap\css\bootstrap-reboot.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\bootstrap\css\bootstrap-reboot.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\bootstrap\css\bootstrap.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\bootstrap\css\bootstrap.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\bootstrap\js\bootstrap.bundle.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\bootstrap\js\bootstrap.bundle.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\bootstrap\js\bootstrap.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\bootstrap\js\bootstrap.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\echarts-gl.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\echarts.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\jquery.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\popper.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\theme\dark.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\theme\infographic.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\theme\macarons.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\theme\roma.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\theme\shine.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Echarts\theme\vintage.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Echarts\bootstrap\css\bootstrap-grid.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Echarts\bootstrap\css\bootstrap-grid.min.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Echarts\bootstrap\css\bootstrap-reboot.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Echarts\bootstrap\css\bootstrap-reboot.min.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Echarts\bootstrap\css\bootstrap.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Echarts\bootstrap\css\bootstrap.min.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Echarts\bootstrap\js\bootstrap.bundle.js.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Echarts\bootstrap\js\bootstrap.bundle.min.js.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Echarts\bootstrap\js\bootstrap.js.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Echarts\bootstrap\js\bootstrap.min.js.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
