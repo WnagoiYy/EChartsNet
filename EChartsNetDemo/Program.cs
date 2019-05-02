@@ -35,7 +35,6 @@ namespace EChartsNetDemo
 
         private static void ThreadStart()
         {
-            int row = 2, col = 3, width = 500, height = 370;
             //01 初始化数据，默认列名作标签轴
             DataTable dataTable = new DataTable("temp");
             dataTable.Columns.Add("产品", typeof(string));
@@ -46,15 +45,16 @@ namespace EChartsNetDemo
             dataTable.Rows.Add("美国", 83.1, 73.4, 55.1);
             dataTable.Rows.Add("日本", 86.4, 65.2, 82.5);
             dataTable.Rows.Add("英国", 72.4, 53.9, 39.1);
-            
+
             //02.add browser
+            int row = 2, col = 3, width = 500, height = 370;
             WebBrowser browser = new WebBrowser();
             browser.Dock = DockStyle.Fill;
             browser.TabIndex = 0;
             browser.Size = new Size(col * width, row * height);
 
-            EchartsInitialize.SupportEchartsGL = true;
-            EchartsInitialize.SupportBootstrap = true;
+            //EchartsInitialize.SupportEchartsGL = true;
+            //EchartsInitialize.SupportBootstrap = true;
             //03.创建布局，增加图，Show()显示图
             Echarts echarts = new Echarts(browser);
             echarts.AddTheme(Theme.roma);
