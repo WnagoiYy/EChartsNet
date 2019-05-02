@@ -1,11 +1,13 @@
 # EChartsNet
 ECharts的Net版本映射，可用于Winform、Wpf，更方便的显示各类图表
+
 net framework >= 4.0
+
 echarts > 4
 
 # 使用
 新建控制台程序(winform和wpf均可，不过都以winform版本的webbrowser作为承载):
-* 01. init data: 初始化数据(DataTable映射为echarts中的dataset)，默认列名作标签轴
+1. init data: 初始化数据(DataTable映射为echarts中的dataset)，默认列名作标签轴
 ```
 DataTable dataTable = new DataTable("temp");
 dataTable.Columns.Add("产品", typeof(string));
@@ -17,8 +19,7 @@ dataTable.Rows.Add("美国", 83.1, 73.4, 55.1);
 dataTable.Rows.Add("日本", 86.4, 65.2, 82.5);
 dataTable.Rows.Add("英国", 72.4, 53.9, 39.1);
 ```
-
-* 02. add browser: 增加浏览器承载 winfrom和wpf的webbrowser均可
+2. add browser: 增加浏览器承载 winfrom和wpf的webbrowser均可
 ```
 int row = 2, col = 3, width = 500, height = 370;
 WebBrowser browser = new WebBrowser();
@@ -27,7 +28,7 @@ browser.TabIndex = 0;
 browser.Size = new Size(col * width, row * height);
 ```
 
-* 03. add layout and charts, then show :创建布局，增加图表，Show()显示
+3. add layout and charts, then show :创建布局，增加图表，Show()显示
 ```
 Echarts echarts = new Echarts(browser);//新建 以browser承载
 echarts.AddTheme(Theme.roma);//增加主题
@@ -41,7 +42,7 @@ echarts[2, 2] = new StackBar(dataTable,new CompleteOption() { title = new Title(
 echarts[2, 3] = new BasicPie(dataTable,new CompleteOption(), 1);
 echarts.Show();//显示
 ```
-* 04. - - 关于控制台显示form和webbrowser见**EChartsNetDemo项目**
+4. 关于控制台显示form和webbrowser见**EChartsNetDemo项目**
 ```
 Form form = new Form();
 form.FormClosing += delegate { browser.Dispose(); Environment.Exit(0); };
@@ -51,8 +52,8 @@ form.StartPosition = FormStartPosition.CenterScreen;
 Application.Run(form);
 ```
 
-* 效果图：
-![图片名称](https://github.com/WnagoiYy/EChartsNet/20190502141413.png)  
+5. 效果图：
+![图片名称](https://github.com/WnagoiYy/EChartsNet/blob/master/20190502141413.png)  
 
 # 目前支持
 基础柱状图、基础折线图、基础散点图、基础面积图、基础曲线图、堆叠柱状图。
