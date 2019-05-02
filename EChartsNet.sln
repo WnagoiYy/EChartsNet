@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EChartsNetDemo", "EChartsNe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B37DA743-EC41-4CBD-8AF1-4EDA1113003D}"
 	ProjectSection(SolutionItems) = preProject
-		.gitattributes = .gitattributes
-		.gitignore = .gitignore
 		20190502141413.png = 20190502141413.png
 	EndProjectSection
 EndProject
