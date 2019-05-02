@@ -5,6 +5,8 @@ net framework >= 4.0
 
 echarts > 4
 
+[直接下载使用](https://pan.baidu.com/s/1v_P6A9lcju59WPXcUcRFLQ)   提*-*码: r79k
+
 # 使用
 新建控制台程序(winform和wpf均可，不过都以winform版本的webbrowser作为承载):
 1. init data: 初始化数据(DataTable映射为echarts中的dataset)，默认列名作标签轴
