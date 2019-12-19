@@ -10,28 +10,17 @@ namespace EChartsNet.Charts.Pie
 {
     public class BasicPie : BaseCharts
     {
-        public BasicPie(DataTable dataTable, CompleteOption option, int categoryCol = 1)
-        {
-
-            if (option.title == null)
-            {
-                option.title = new Title()
-                {
-                    text = "'基础饼状图'",
-                    left = "'center'"
-                };
-
-                if (!option.legend.FlagDic["orient"])
-                {
-                    option.legend.orient = Option.BaseOption.Orient.vertical;
-                    option.legend.left = "'left'";
-                }
-                option.dataset = new DataSetSource()
-                {
-                    source = Common.GetDataSetSource(dataTable, categoryCol - 1),
-                };
-                option.series = new Series(
-                    new ISeries[] {
+        public BasicPie(DataTable dataTable, CompleteOption option, int categoryCol = 1) {
+            
+            if (!option.legend.FlagDic["orient"]) {
+                option.legend.orient = Option.BaseOption.Orient.horizontal;
+                option.legend.left = "'center'";
+            }
+            option.dataset = new DataSetSource() {
+                source = Common.GetDataSetSource(dataTable, categoryCol - 1),
+            };
+            option.series = new Series(
+                new ISeries[] {
                 new SeriesPie() {
                     emphasis = new Option.SeriesType.SeriesBaseOption.Emphasis()
                     {
@@ -44,8 +33,8 @@ namespace EChartsNet.Charts.Pie
                     }
 
             }});
-                _initScript = option.ToString();
-            }
+            _initScript = option.ToString();
+
         }
     }
 }
