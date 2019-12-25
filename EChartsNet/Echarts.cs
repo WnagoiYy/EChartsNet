@@ -29,7 +29,7 @@ namespace EChartsNet
             this.webBrowser.IsWebBrowserContextMenuEnabled = false;//禁用右键菜单
             this.webBrowser.WebBrowserShortcutsEnabled = false;//禁用快捷键
             this.webBrowser.AllowWebBrowserDrop = false;//禁用Drop
-            this.webBrowser.AllowNavigation = false;//禁用超链接 
+            //this.webBrowser.AllowNavigation = false;//禁用超链接 
             /*Type type = webBrowser.GetType();
             switch (type.FullName)
             {
@@ -182,8 +182,9 @@ namespace EChartsNet
             htmlNode.AddChild(headNode).AddChild(bodyNode);
 
             string tempName = "Echarts/" + DateTime.Now.Ticks + ".html";
-            File.WriteAllText(tempName, @"<!DOCTYPE html>" + Environment.NewLine + htmlNode.GetHtmlStr());
-            webBrowser.Navigate(new Uri(Environment.CurrentDirectory) + "/" + tempName);
+            string htmlContent = @"<!DOCTYPE html>" + Environment.NewLine + htmlNode.GetHtmlStr();
+            File.WriteAllText(tempName, htmlContent);
+            webBrowser.Navigate(new Uri(Environment.CurrentDirectory + "/" + tempName));            
         }
 
         public void SaveAsHtml(string fileName)

@@ -47,37 +47,42 @@ namespace EChartsNetDemo
             dataTable.Rows.Add("英国", 72.4, 53.9, 39.1);
 
             //02.add browser
-            int row = 2, col = 3, width = 500, height = 370;
             WebBrowser browser = new WebBrowser();
             browser.Dock = DockStyle.Fill;
             browser.TabIndex = 0;
-            browser.Size = new Size(col * width, row * height);
+            
+            //browser.Size = new Size(col * width, row * height);
 
             //EchartsInitialize.SupportEchartsGL = true;
             //EchartsInitialize.SupportBootstrap = true;
             //03.创建布局，增加图，Show()显示图 
             Echarts echarts = new Echarts(browser);
-            echarts.AddTheme(Theme.roma);
-            echarts.CreateTableLayout(row, col, width, height);
-
-            echarts[1, 1] = new SimpleBar(dataTable,new CompleteOption() { title = new Title() { text = "'基础柱状图'", } }, 1);
-            echarts[1, 2] = new BasicLineChart(dataTable,new CompleteOption() { title = new Title() { text = "'基础折线图'", } }, 1);
-            echarts[1, 3] = new BasicScatter(dataTable, new CompleteOption() { title = new Title() { text = "'基础散点图'", } }, 1);
-            //echarts[1, 3] = new BasicAreachart(dataTable,new CompleteOption() { title = new Title() { text = "'基础面积图'", } }, 1);
-            echarts[2, 1] = new SmoothedLineChart(dataTable,new CompleteOption() { title = new Title() { text = "'基础曲线图'", } }, 1);
-            echarts[2, 2] = new StackBar(dataTable,new CompleteOption() { title = new Title() { text = "'堆叠柱状图'", } }, 1);
-            echarts[2, 3] = new BasicPie(dataTable,new CompleteOption(), 1);
-            echarts.Show();
-
+            ShowECharts(browser, dataTable, echarts);
+            browser.SizeChanged += delegate { try { ShowECharts(browser, dataTable, echarts); } catch { } };
             //04 - -
             Form form = new Form();
             form.FormClosing += delegate { browser.Dispose(); Environment.Exit(0); };
-            form.Size = new Size(col * width + 45, row * height + 60);
+            //form.Size = new Size(col * width + 45, row * height + 60);
             form.Controls.Add(browser);
+            form.Size = new Size(800, 600);
             form.StartPosition = FormStartPosition.CenterScreen;
             Application.Run(form);
 
-            
+        }
+        static int row = 2;static int col = 3;
+        //自适应两行三列
+        static void ShowECharts(WebBrowser browser,DataTable dataTable,Echarts echarts) {
+            echarts.AddTheme(Theme.roma);
+            echarts.CreateTableLayout(row, col, (browser.Width-20) /col, (browser.Height-20) / row);
+
+            echarts[1, 1] = new SimpleBar(dataTable, new CompleteOption() { title = new Title() { text = "'基础柱状图'", } }, 1);
+            echarts[1, 2] = new BasicLineChart(dataTable, new CompleteOption() { title = new Title() { text = "'基础折线图'", } }, 1);
+            echarts[1, 3] = new BasicScatter(dataTable, new CompleteOption() { title = new Title() { text = "'基础散点图'", } }, 1);
+            //echarts[1, 3] = new BasicAreachart(dataTable,new CompleteOption() { title = new Title() { text = "'基础面积图'", } }, 1);
+            echarts[2, 1] = new SmoothedLineChart(dataTable, new CompleteOption() { title = new Title() { text = "'基础曲线图'", } }, 1);
+            echarts[2, 2] = new StackBar(dataTable, new CompleteOption() { title = new Title() { text = "'堆叠柱状图'", } }, 1);
+            echarts[2, 3] = new BasicPie(dataTable, new CompleteOption(), 1);
+            echarts.Show();
         }
     }
 }
