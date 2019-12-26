@@ -5,10 +5,11 @@ net framework >= 4.0
 
 echarts > 4
 
-[直接下载使用](https://pan.baidu.com/s/1v_P6A9lcju59WPXcUcRFLQ)   提*-*码: r79k  ☞ 欢迎 Star ! ! !
+[直接下载使用](https://pan.baidu.com/s/1v_P6A9lcju59WPXcUcRFLQ)   提*-*码: r79k  ☞ 欢迎 Star ! ! ! -- 暂未更新 请git生成
 
 # 使用
-新建控制台程序(winform和wpf均可，不过都以winform版本的webbrowser作为承载):
+新建wpf程序,添加System.Windows.Forms、System.Windows.Forms.Integration、EChartsNet程序集
+(winform和wpf均可，不过都以winform版本的webbrowser作为承载):
 1. init data: 初始化数据(DataTable映射为echarts中的dataset)，默认列名作标签轴
 ```C#
 DataTable dataTable = new DataTable("temp");
@@ -23,35 +24,27 @@ dataTable.Rows.Add("英国", 72.4, 53.9, 39.1);
 ```
 2. add browser: 增加浏览器承载 winfrom的webbrowser(wpf可嵌入winform控件)
 ```C#
-int row = 2, col = 3, width = 500, height = 370;
-WebBrowser browser = new WebBrowser();
-browser.Dock = DockStyle.Fill;
-browser.TabIndex = 0;
-browser.Size = new Size(col * width, row * height);
+Echarts echarts = new Echarts(browser);//新建 以browser承载
+echarts.AddTheme(Theme.roma);//增加主题
 ```
 
 3. add layout and charts, then show :创建布局，增加图表，Show()显示
 ```C#
-Echarts echarts = new Echarts(browser);//新建 以browser承载
-echarts.AddTheme(Theme.roma);//增加主题
-echarts.CreateTableLayout(row, col, width, height);//创建布局
-
-echarts[1, 1] = new SimpleBar(dataTable,new CompleteOption() { title = new Title() { text = "'基础柱状图'", } }, 1);
-echarts[1, 2] = new BasicLineChart(dataTable,new CompleteOption() { title = new Title() { text = "'基础折线图'", } }, 1);
-echarts[1, 3] = new BasicScatter(dataTable, new CompleteOption() { title = new Title() { text = "'基础散点图'", } }, 1);
-echarts[2, 1] = new SmoothedLineChart(dataTable,new CompleteOption() { title = new Title() { text = "'基础曲线图'", }}, 1);
-echarts[2, 2] = new StackBar(dataTable,new CompleteOption() { title = new Title() { text = "'堆叠柱状图'", } }, 1);
-echarts[2, 3] = new BasicPie(dataTable,new CompleteOption(), 1);
-echarts.Show();//显示
+private void ShowCharts(DataTable dataTable ,Echarts echarts) {
+    echarts.CreateTableLayout(2, 3, (browser.Width - 20) / 3, (browser.Height - 20) / 2);//创建布局
+    echarts[1, 1] = new SimpleBar(dataTable, new CompleteOption() { title = new Title() { text = "'基础柱状图'", } }, 1);
+    echarts[1, 2] = new BasicLineChart(dataTable, new CompleteOption() { title = new Title() { text = "'基础折线图'", } }, 1);
+    echarts[1, 3] = new BasicScatter(dataTable, new CompleteOption() { title = new Title() { text = "'基础散点图'", } }, 1);
+    echarts[2, 1] = new SmoothedLineChart(dataTable, new CompleteOption() { title = new Title() { text = "'基础曲线图'", } }, 1);
+    echarts[2, 2] = new StackBar(dataTable, new CompleteOption() { title = new Title() { text = "'堆叠柱状图'", } }, 1);
+    echarts[2, 3] = new BasicPie(dataTable, new CompleteOption() { title = new Title() { text = "'简单饼图'", } }, 1);
+    echarts.Show();//显示
+}
 ```
-4. 关于控制台显示form和webbrowser见**EChartsNetDemo项目**
+4. 显示和添加浏览器大小更改自适应事件**EChartsNetWpfDemo项目**
 ```C#
-Form form = new Form();
-form.FormClosing += delegate { browser.Dispose(); Environment.Exit(0); };
-form.Size = new Size(col * width + 45, row * height + 60);
-form.Controls.Add(browser);
-form.StartPosition = FormStartPosition.CenterScreen;
-Application.Run(form);
+ShowCharts(dataTable, echarts);
+browser.SizeChanged += delegate { ShowCharts(dataTable, echarts); };
 ```
 
 5. 效果图：
