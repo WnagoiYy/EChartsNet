@@ -1,11 +1,10 @@
 # EChartsNet
 ECharts的Net版本映射，可用于Winform、Wpf，更方便的显示各类图表
-
 net framework >= 4.0
-
 echarts > 4
 
-[直接下载使用](https://pan.baidu.com/s/1v_P6A9lcju59WPXcUcRFLQ)   提*-*码: r79k  ☞ 欢迎 Star ! ! ! -- 暂未更新 请git生成
+直接在Releases下载使用即可。 
+☞ 欢迎 Star ! ! ! -
 
 # 使用
 新建wpf程序,添加System.Windows.Forms、System.Windows.Forms.Integration、EChartsNet程序集
